@@ -47,6 +47,7 @@ def head_commit_passes_all_required_checks(
         return False, "not all required checks passed"
     return True, None
 
+
 # A PR is considered auto-mergeable if:
 #     - it has the AUTO_MERGE_LABEL
 #     - it targets the BASE_BRANCH
