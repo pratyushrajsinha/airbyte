@@ -21,7 +21,7 @@ import io.airbyte.cdk.load.data.StringType
 import io.airbyte.cdk.load.data.StringValue
 import io.airbyte.cdk.load.data.TimestampValue
 import io.airbyte.cdk.load.data.parquet.ParquetMapperPipelineFactory
-import io.airbyte.cdk.load.message.DestinationRecord
+import io.airbyte.cdk.load.message.DestinationRecordAirbyteValue
 import io.airbyte.cdk.load.message.Meta
 import io.airbyte.cdk.load.message.Meta.Companion.COLUMN_NAME_AB_EXTRACTED_AT
 import io.airbyte.cdk.load.message.Meta.Companion.COLUMN_NAME_AB_GENERATION_ID
@@ -197,7 +197,7 @@ internal class IcebergUtilTest {
                 syncId = 1,
             )
         val airbyteRecord =
-            DestinationRecord(
+            DestinationRecordAirbyteValue(
                 stream = airbyteStream.descriptor,
                 data =
                     ObjectValue(
@@ -205,7 +205,6 @@ internal class IcebergUtilTest {
                     ),
                 emittedAtMs = System.currentTimeMillis(),
                 meta = Meta(),
-                serialized = "{\"id\":42, \"name\":\"John Doe\"}"
             )
         val pipeline = ParquetMapperPipelineFactory().create(airbyteStream)
         val columns =
@@ -245,7 +244,7 @@ internal class IcebergUtilTest {
                 syncId = 1,
             )
         val airbyteRecord =
-            DestinationRecord(
+            DestinationRecordAirbyteValue(
                 stream = airbyteStream.descriptor,
                 data =
                     ObjectValue(
@@ -257,7 +256,6 @@ internal class IcebergUtilTest {
                     ),
                 emittedAtMs = System.currentTimeMillis(),
                 meta = Meta(),
-                serialized = "{\"id\":42, \"name\":\"John Doe\"}"
             )
         val pipeline = ParquetMapperPipelineFactory().create(airbyteStream)
         val columns =
@@ -297,7 +295,7 @@ internal class IcebergUtilTest {
                 syncId = 1,
             )
         val airbyteRecord =
-            DestinationRecord(
+            DestinationRecordAirbyteValue(
                 stream = airbyteStream.descriptor,
                 data =
                     ObjectValue(
@@ -305,7 +303,6 @@ internal class IcebergUtilTest {
                     ),
                 emittedAtMs = System.currentTimeMillis(),
                 meta = Meta(),
-                serialized = "{\"id\":42, \"name\":\"John Doe\"}"
             )
         val pipeline = ParquetMapperPipelineFactory().create(airbyteStream)
         val columns =
