@@ -22,7 +22,7 @@ from typing import TYPE_CHECKING
 import asyncclick as click
 import asyncer
 from dagger import Client, Config, Container, Directory, ExecError, File, ImageLayerCompression, Platform, Secret
-from exceptiongroup import ExceptionGroup
+from exceptiongroup import BaseExceptionGroup, ExceptionGroup
 from more_itertools import chunked
 
 if TYPE_CHECKING:
