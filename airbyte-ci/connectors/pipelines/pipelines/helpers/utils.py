@@ -15,7 +15,6 @@ import sys
 import unicodedata
 import warnings
 import xml.sax.saxutils
-from exceptiongroup import ExceptionGroup
 from io import TextIOWrapper
 from pathlib import Path
 from typing import TYPE_CHECKING
@@ -23,6 +22,7 @@ from typing import TYPE_CHECKING
 import asyncclick as click
 import asyncer
 from dagger import Client, Config, Container, Directory, ExecError, File, ImageLayerCompression, Platform, Secret
+from exceptiongroup import ExceptionGroup
 from more_itertools import chunked
 
 if TYPE_CHECKING:
